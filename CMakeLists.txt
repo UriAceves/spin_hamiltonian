@@ -10,10 +10,10 @@ enable_language(Fortran)
 
 set(SOURCE_SPIN ${SOURCE_SPIN}  source/main.F90
                                 source/mod_tools.F90
-                                mod_types.F90
-                                mod_parameters.F90
-                                mod_spins.F90
-                                mod_hamiltonian.F90
+                                source/mod_types.F90
+                                source/mod_parameters.F90
+                                source/mod_spins.F90
+                                source/mod_hamiltonian.F90
                                 source/eigensolver.F90
                                 )
 
