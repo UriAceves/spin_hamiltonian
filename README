@@ -1,0 +1,13 @@
+This program diagonalizes a spin hamiltonian (defined in mod_hamiltonian) and
+prints its eigenvalues and eigenvectors. It also calculates the transition energies 
+and the expectation values of Sx, Sy, Sz and S^2.
+The input is given by two namelists in a file called "input".
+- &parameters, containing:
+ the spin of the system S, which defines the dimension of the problem (2*S+1);
+ the Hamiltonian variables defining the axial and transverse anisotropies, D and E, respectively;
+ and an external magnetic field that defines the Zeeman energy (in Tesla), B.
+- &Bloop, containing values for a loop over applied magnetic fields:
+ Bmax, the maximum value of the applied field (starting with the value B above);
+ npoints, defining the number of field points to calculate in the interval [B,Bmax);
+ comp, which defines the component of the field to be varied (1 - x, 2 - y, 3 - z).
+ 

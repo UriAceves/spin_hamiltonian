@@ -1,0 +1,6 @@
+.DS_Store
+*.x
+*.exe
+output
+results
+
