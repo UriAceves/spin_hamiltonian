@@ -11,4 +11,4 @@ contains
 
     write(ItoS, "(i0)") i
   end function ItoS
-end module tools
+end module mod_tools

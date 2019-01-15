@@ -8,6 +8,7 @@ program spin_hamiltonian
   use mod_parameters,  only: S, dim, parameters, Bloop, comp, Bmax, npoints, B
   use mod_spins,       only: allocate_spins, build_spin_operators, calculate_expectation_values, deallocate_spins
   use mod_hamiltonian, only: hamilt, eigenvalues, allocate_hamiltonian, build_hamiltonian, deallocate_hamiltonian
+  use mod_tools,       only: ItoS
   implicit none
   integer            :: i,j,k,l
   !! Counter for loops
@@ -17,8 +18,6 @@ program spin_hamiltonian
   !! Input and output filenames
   character(len=30)  :: format_var
   !! Format variable for the hamiltonian
-  character(len=100) :: itos
-  !! Integer to string function
   real(kind=dp)      :: Bmin
   !! Minimum value for the magnetic field (from B(comp))
   real(kind=dp)      :: Bstep
@@ -63,9 +62,11 @@ program spin_hamiltonian
   open(unit=12,file=results_file)
   ! Print the Git version (VERSION is defined via CMake macro and defined with compiler flag -DVERSION='')
 #if defined(VERSION)
-  write(output%unit,"('Git version: ',a)") VERSION
+  write(unit=11,fmt="('# Git version: ',a)") VERSION
+  write(unit=12,fmt="('# Git version: ',a)") VERSION
 #else
-  write(output%unit,"('Git version: unknown')")
+  write(unit=11,fmt="('# Git version: unknown')")
+  write(unit=12,fmt="('# Git version: unknown')")
 #endif
 
   write(unit=12,fmt="('#       B(',i0,')     ,  Transition energies(2:dim) ')") comp

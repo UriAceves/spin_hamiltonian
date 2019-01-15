@@ -3,4 +3,9 @@
 *.exe
 output
 results
-
+*.mod
+cmake/*
+*optrpt
+*genmod*
+build/*
+bin/*

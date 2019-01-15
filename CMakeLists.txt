@@ -12,6 +12,7 @@ set(SOURCE_SPIN ${SOURCE_SPIN}  source/main.F90
                                 source/mod_tools.F90
                                 source/mod_types.F90
                                 source/mod_parameters.F90
+                                source/mod_constants.F90
                                 source/mod_spins.F90
                                 source/mod_hamiltonian.F90
                                 source/eigensolver.F90

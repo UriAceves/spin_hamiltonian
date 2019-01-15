@@ -20,13 +20,12 @@ contains
     use mod_constants,  only: g, mub
     use mod_parameters, only: dim, D, E, B
     use mod_spins,      only: Sx, Sy, Sz, Sx2, Sy2, Sz2
+    use mod_tools,      only: ItoS
     implicit none
     character(len=30)  :: format_var
     !! Format variable for the Hamiltonian
     integer            :: i,j
     !! Counter for loops
-    character(len=100) :: itos
-    !! Integer to string function
 
     ! Building the Hamiltonian
     hamilt = D*Sz2 + E*(Sx2-Sy2) + g*mub*( B(1)*Sx + B(2)*Sy + B(3)*Sz)
